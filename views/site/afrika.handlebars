@@ -1,0 +1,44 @@
+<header class="header">
+
+  <h1>Afrika</h1>
+  <h3>İş Akışı</h3>
+
+</header>
+
+<div class="home">
+  <div class="wrapper">
+    <div class="postalar">
+
+      {{#each allData}}
+
+        <div class="posta">
+          <div class="soltaraf"> 
+                        <span><h4>Konu :{{title}}</h4></span>
+            <span><h4>İçerik :{{content}}</h4></span>
+            <span><h4>Tarih :{{date}}</h4></span>
+            </div>
+         
+
+          {{!-- <div><span>{{name}}</span></div>
+            <div><span>{{file}}</span></div> --}}
+          <div class="sagtaraf">
+            <p class="linkp"><a href="/single/{{_id}}">Sipariş Pdf</a></p>
+
+          </div>
+
+        </div>
+      {{/each}}
+
+    </div>
+
+    <div class="sidebar">
+
+ 
+
+
+
+    </div>
+  </div>
+</div>
+
+

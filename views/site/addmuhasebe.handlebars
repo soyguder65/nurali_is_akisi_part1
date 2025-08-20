@@ -1,0 +1,74 @@
+
+<div class="addMessage">
+   <p id="addFormMessage">Afrika Grubuna Gönderilecek Sipariş Bilgileri</p>
+</div>
+
+   <div class="add">
+      <form id="addForm">
+         <div class="text">
+
+            <input name="title" type="text" placeholder="Your Title *" required>
+
+            <textarea name="content" placeholder="Your Content *" required></textarea>
+            
+            <input name="name" type="text" placeholder="Your Name *" required>
+            <input name="date" type="date" required>
+           
+         </div>
+
+         <div class="button">
+            <button>
+               <i class="fa-solid fa-plus"></i>
+            </button>
+            <label for="file">
+               <i class="fa-solid fa-image"></i>
+            </label>
+            <input name="file" type="file" id="file" style="display: none;"> 
+         </div>
+      </form>
+   </div>
+
+
+<script>
+const addForm=document.getElementById('addForm')
+const addFormMessage=document.getElementById('addFormMessage')
+
+const clearMessageForaddForm=()=>{
+   
+   setTimeout(()=>{
+      addFormMessage.innerHTML=''
+   },1000*3)
+}
+
+addForm.addEventListener('submit',(e)=>{
+e.preventDefault()
+
+
+const formData=new FormData(e.target) 
+
+fetch('/addmuhasebe',{
+   method:'post',
+   body:formData
+}).then(response=>{
+   return response.json()
+}).then(res=>{
+   if(res.case){
+      addFormMessage.style.color='blue';
+      addFormMessage.innerHTML=res.message;
+       setTimeout(()=>{
+          window.location.href='/addmuhasebe'
+        },1000*2)
+     
+   }
+   else{
+addFormMessage.style.color='red';
+addFormMessage.innerHTML=res.message;
+
+   }
+   clearMessageForaddForm()
+})
+})
+</script>
+
+
+

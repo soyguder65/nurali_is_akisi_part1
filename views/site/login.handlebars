@@ -1,0 +1,64 @@
+
+
+<div class="logReg">
+    <form id="login">
+ 
+
+         <div class="formGroup">
+            <input name="username" type="text" value="adminNurali">
+            <span>userName *</span>
+        </div>
+
+         <div class="formGroup">
+            <input name="password" type="text" value="1234">
+            <span>Password *</span>
+        </div>
+
+        <div class="btnGroup">
+            <a href="/login">Don't you have account?</a>
+            <button>Login</button>
+        </div>
+    </form>
+     <div class="message">
+        <p id="loginMessage"></p>
+    </div>
+</div>
+
+
+<script>
+    const login=document.getElementById('login')
+    const loginMessage=document.getElementById('loginMessage')
+    login.addEventListener('submit',(e)=>{
+        e.preventDefault()
+    const formData=new FormData(e.target)
+
+        fetch('/login',{
+            method:'post',
+            body:formData
+
+           
+        }).then(response=>{
+            return response.json()
+        }).then(res=>{
+            if(res.case){
+                  loginMessage.style.color='white';
+                loginMessage.innerHTML=res.message
+                setTimeout(()=>{
+                    window.location.href='/'
+                },1000*2)
+
+            }
+            else{
+                loginMessage.style.color='white';
+                loginMessage.innerHTML=res.message
+                
+
+
+            }
+        })
+    })
+
+
+
+
+</script>

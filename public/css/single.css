@@ -1,0 +1,115 @@
+.single{
+    width: 100%;
+    height:calc(100vh - 100px);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    
+
+}
+.single .wrapper{
+    max-width: 1366px;
+    width: 50%;
+    background-color:lightblue;
+    height: 150px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.singleHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 10px;   
+    width: 100%;
+
+}
+/* .singleHeader h2{
+    font-size: 30px;
+} */
+.singleHeader .buttons button{
+    width: 35px;
+    height: 35px;
+    
+    border: none;
+    cursor: pointer;
+
+}
+
+.singlePdfindirlink{
+   background-color:red;
+   padding: 5px;
+     width: 100px;
+   height: 35px;    
+   border: none;
+   cursor: pointer; 
+   text-align: center;
+   color: black;  
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+
+}
+
+
+
+
+.singleHeader .buttons button:first-child{
+    background-color: orange;
+    
+}
+.singleHeader .buttons button:last-child{
+    background-color: red;
+    margin-left: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .single img{
+    border-radius: 10px;
+    max-height: 500px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.single p::first-letter{
+    margin-left: 20px;
+
+}
+.singleFooter{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+} */
+/* .singleFooter span:first-child{
+    font-size: 18px;
+    font-weight: 700;
+}
+.singleFooter span:last-child{
+    font-size: 18px;
+    font-weight: 700;
+} */
+

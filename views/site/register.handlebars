@@ -1,0 +1,65 @@
+
+<div class="logReg">
+    <form id="register">
+        <div class="formGroup">
+            <input name="email" type="text">
+            <span>Email *</span>
+        </div>
+
+         <div class="formGroup">
+            <input name="username" type="text">
+            <span>userName *</span>
+        </div>
+
+         <div class="formGroup">
+            <input name="password" type="text">
+            <span>Password *</span>
+        </div>
+
+        <div class="btnGroup">
+            <a href="/login">Do you have account?</a>
+            <button>Register</button>
+        </div>
+    </form>
+    <div class="message">
+        <p id="registerMessage"></p>
+    </div>
+</div>
+
+<script>
+    const register=document.getElementById('register')
+    const registerMessage=document.getElementById('registerMessage')
+    register.addEventListener('submit',(e)=>{
+        e.preventDefault()
+const formData=new FormData(e.target)
+
+        fetch('/register',{
+            method:'post',
+            body:formData
+
+           
+        }).then(response=>{
+            return response.json()
+        }).then(res=>{
+            if(res.case){
+                  registerMessage.style.color='white';
+                registerMessage.innerHTML=res.message
+                setTimeout(()=>{
+                    window.location.href='/'
+                },1000*2)
+
+            }
+            else{
+                registerMessage.style.color='white';
+                registerMessage.innerHTML=res.message
+                clearMessageForRegister()
+
+
+            }
+        })
+    })
+
+
+
+
+</script>

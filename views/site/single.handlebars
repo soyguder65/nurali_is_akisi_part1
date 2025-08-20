@@ -1,0 +1,47 @@
+<div class="single">
+  <div class="wrapper">
+
+    <div class="singleHeader">
+      <div class="singlePdfindirlink">
+    <a href="/pdfindir/{{singleData._id}}">PDF indir</a>
+</div>
+      {{!-- <h2>{{singleData.title}}</h2> --}}
+      <div class="buttons">
+        <button>
+          <i class="fa-solid fa-pen"></i>
+        </button>
+        <button id="deleteButton">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- <p>
+      {{singleData.content}}
+    </p> --}}
+
+    {{!-- <div class="singleFooter">
+      <span>{{singleData.path}}</span>
+      <span>{{singleData.date}}</span>
+
+    </div> --}}
+
+  </div>
+</div>
+
+<script>
+  const deleteButton=document.getElementById('deleteButton')
+  deleteButton.addEventListener('click',()=>{ 
+    let url=window.location.href;
+  url=url.split('single/')[1]; 
+  fetch(`/single/${url}`,{ 
+    method:'delete'
+  }).then(response=>response.json()) 
+  .then((res)=>{ 
+    if(res.case){
+  setTimeout(()=>{ 
+    window.location.href='/' },1000*2) 
+    } 
+    }) 
+    })
+</script>

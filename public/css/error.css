@@ -1,0 +1,13 @@
+.error{
+    height:100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.error p{
+    font-size:5rem;
+    font-weight: 800;
+    color: rgb(92, 91, 90,0.5);
+
+}

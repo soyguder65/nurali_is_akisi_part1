@@ -1,0 +1,23 @@
+{
+  "name": "dynamicwebnurali",
+  "version": "1.0.0",
+  "description": "dynamic web nurali",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "npx nodemon app.js"
+  },
+  "author": "benss",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "express-fileupload": "^1.5.2",
+    "express-handlebars": "^8.0.3",
+    "express-session": "^1.18.2",
+    "mongoose": "^8.17.1",
+    "pdfkit": "^0.17.1"
+  }
+}

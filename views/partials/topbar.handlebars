@@ -1,0 +1,30 @@
+<div class="topbar">
+  <div class="wrapper">
+    <div class="center">
+      <a href="/">HOME</a>
+      <a href="/yonetim">yonetim</a>
+
+      <a href="/muhasebe">MUHASEBE</a>
+      
+     
+      
+      <a href="/afrika">AFRIKA</a>
+      <a href="/napGlobal">NAP GLOBAL</a>
+      <a href="/dernek">DERNEK</a>
+
+      {{#unless user}}
+        <a href="/register">REGISTER</a>
+        <a href="/login">LOGIN</a>
+      {{/unless}}
+
+
+      {{#if user}}
+        <a href="/add">SİPARİŞ</a>
+        <a href="/addmuhasebe">ADDmuhasebe</a>
+        <a href="/logout">LOGOUT</a>
+
+      {{/if}}
+
+    </div>
+  </div>
+</div>

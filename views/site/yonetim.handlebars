@@ -1,0 +1,38 @@
+
+    <header class="header">
+     
+      <h1>Yönetim</h1>
+      <h3>İş Akışı</h3>
+        
+    </header>
+
+
+     <div class="home">
+      <div class="wrapper">
+        <div class="posts">
+   
+          
+        {{#each allData}}
+                      {{!-- <a href="/single/{{_id}}" class="post target"></a> --}}
+          <div class="post">
+            <div><span>Ad Soyad:{{adSoyad}}</span></div>            
+            <div><span>Tarih:{{date}}</span></div>            
+            <div><span>Sipariş Cinsi:{{siparisCinsi}}</span></div>
+            <div><span>Sipariş Miktarı:{{siparisMiktari}}</span></div>
+
+             <span><h4>Konu :{{title}}</h4></span>
+            <span><h4>İçerik :{{content}}</h4></span>
+            <span><h4>Tarih :{{date}}</h4></span>
+               
+
+           
+          </div>
+        {{/each}}
+
+        </div>
+
+    <div class="sidebar"></div>
+      </div>
+    </div>
+
+

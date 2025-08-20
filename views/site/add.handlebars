@@ -1,0 +1,71 @@
+<div class="addMessage">
+  <p id="addFormMessage">Muhasebeye Gönderilecek Sipariş Bilgileri</p>
+</div>    
+    
+    
+    <div class="add">
+      <form id="addForm">
+        <div class="text">
+          <input name="adSoyad" type="text" placeholder="Ad Soyad*" required>
+          <input name="date" type="date" required>        
+          <input name="siparisCinsi" type="text" placeholder="Sipariş Cinsi" required>        
+          <input name="siparisMiktari" type="number" placeholder="Sipariş Miktarı" required>        
+                  
+          
+        </div>
+
+        <div class="button">
+          <button>Gönder</button>
+        </div>
+      </form>
+    </div>
+
+
+
+
+<script>
+    const addForm=document.getElementById('addForm')
+    const addFormMessage=document.getElementById('addFormMessage')
+    
+    const clearMessageForaddForm=()=>{
+      setTimeout(()=>{
+        addFormMessage.innerHTML=''
+
+      },1000*3)
+    }
+    
+    
+    
+    addForm.addEventListener('submit',(e)=>{
+        e.preventDefault()
+const formData=new FormData(e.target)
+
+        fetch('/add',{
+            method:'post',
+            body:formData
+
+           
+        }).then(response=>{
+            return response.json()
+        }).then(res=>{
+            if(res.case){
+                  addFormMessage.style.color='black';
+                addFormMessage.innerHTML=res.message
+                setTimeout(()=>{
+                    window.location.href='/add'
+                },1000*2)
+
+                
+
+            }
+            else{
+                addFormMessage.style.color='black';
+                addFormMessage.innerHTML=res.message
+                
+
+
+            }
+            clearMessageForaddForm()
+        })
+    })
+</script>
